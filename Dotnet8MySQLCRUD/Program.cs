@@ -1,16 +1,13 @@
 using Dotnet8CRUD.Data;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ApplicationDbContext>();
 
-
-//MSSQL DB Conn:
-//string connString = builder.Configuration.GetConnectionString("connMSSQL");
-//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connString));
 
 //MySQL DB Conn:
 string connMySQLString = builder.Configuration.GetConnectionString("connMySQL");
